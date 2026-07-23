@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEMASTER | 寶可夢大師之路</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#121317',
+                        cyan: {
+                            DEFAULT: '#00e0ff',
+                            glow: 'rgba(0, 224, 255, 0.5)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white tracking-widest text-glow">
+                        POKEMASTER<span class="text-cyan">.</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#journey" class="text-gray-300 hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">冒險旅程</a>
+                        <a href="#pokedex" class="text-gray-300 hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">圖鑑</a>
+                        <a href="#stats" class="text-gray-300 hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">數據統計</a>
+                        <a href="#community" class="text-gray-300 hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">社群</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#start" class="btn-primary px-6 py-2 rounded-md text-sm font-bold">登入系統</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <span class="sr-only">開啟主選單</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient overflow-hidden">
+        <!-- Abstract glowing circles -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan rounded-full mix-blend-screen filter blur-[128px] opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-screen filter blur-[128px] opacity-20"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                開啟你的 <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-500 text-glow">冒險傳奇</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-xl text-gray-300 mx-auto mb-10">
+                連線至全球最大的訓練家網路。探索未知領域、結識強大夥伴，並在這裡寫下屬於你的寶可夢大師之路。
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#start" class="btn-primary px-8 py-4 text-lg">啟動神經連結</a>
+                <a href="#explore" class="px-8 py-4 text-lg font-medium text-white border border-gray-600 rounded-lg hover:border-cyan hover:text-cyan transition-all duration-300 backdrop-blur-sm">探索資料庫</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro: Pokemon World -->
+    <section id="journey" class="py-24 relative border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 relative">
+                    <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl border border-gray-800 relative z-10">
+                        <img src="assets/landscape.png" alt="Pokemon World Landscape" class="object-cover w-full h-full opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
+                    </div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-cyan to-blue-500 rounded-xl opacity-20 blur-xl -z-10"></div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
+                        <span class="text-cyan">//</span> 寶可夢的世界
+                    </h2>
+                    <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                        在這個由數據與自然交織而成的賽博空間中，人類與寶可夢的羈絆超越了物理的限制。透過 Cyber-Dex 終端，我們能夠以前所未有的深度解析每一隻寶可夢的潛能。
+                    </p>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        無論是穿梭於霓虹閃爍的都市叢林，還是探索未經開發的數位荒野，每一次相遇都是命運的安排。準備好迎接挑戰了嗎？
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Experience (3-Cards) -->
+    <section id="pokedex" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base text-cyan font-semibold tracking-wide uppercase">核心體驗</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    掌握大師級技能
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="cyber-card p-8">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 border border-cyan border-opacity-30">
+                        <svg class="w-6 h-6 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">捕捉與收集</h3>
+                    <p class="text-gray-400">
+                        利用先進的空間掃描技術，在全息投影地圖上探索稀有寶可夢。擴充你的資料庫，收集所有已知物種。
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="cyber-card p-8">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 border border-cyan border-opacity-30">
+                        <svg class="w-6 h-6 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">進化與成長</h3>
+                    <p class="text-gray-400">
+                        透過戰鬥數據分析與基因重組模擬，解鎖寶可夢的新型態與強大技能。培育出無可匹敵的戰鬥陣容。
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="cyber-card p-8">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 border border-cyan border-opacity-30">
+                        <svg class="w-6 h-6 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">道館挑戰</h3>
+                    <p class="text-gray-400">
+                        在全球虛擬競技場中挑戰各地道館館主。贏得榮耀勳章，提升你的全球訓練家排名。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery: Adventure Highlights -->
+    <section class="py-24 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-12 flex items-center">
+                <span class="w-8 h-1 bg-cyan mr-4 rounded-full shadow-[0_0_10px_rgba(0,224,255,0.8)]"></span>
+                冒險掠影
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="gallery-item col-span-2 row-span-2">
+                    <img src="assets/battle.png" alt="Battle Scene">
+                    <div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+                        <p class="text-cyan font-mono text-sm">#001</p>
+                        <h4 class="text-white font-bold text-xl">全息模擬戰鬥</h4>
+                    </div>
+                </div>
+                <div class="gallery-item col-span-2 md:col-span-1">
+                    <img src="assets/city.png" alt="Neon City">
+                </div>
+                <div class="gallery-item col-span-2 md:col-span-1">
+                    <img src="assets/device.png" alt="Cyber Device">
+                </div>
+                <div class="gallery-item col-span-4 md:col-span-2">
+                    <img src="assets/trainer.png" alt="Trainer Journey">
+                    <div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+                        <p class="text-cyan font-mono text-sm">#004</p>
+                        <h4 class="text-white font-bold text-xl">未知領域探索</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-20 relative bg-gray-900 border-y border-gray-800">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiMwMGUwZmYiLz48L3N2Zz4=')]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">邁向冠軍之路</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400 sm:mt-4">全球網路即時同步數據</p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+                <div class="cyber-card p-6 text-center">
+                    <div class="text-5xl font-extrabold text-white text-glow mb-2">98<span class="text-cyan">%</span></div>
+                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">大師成就達成率</div>
+                </div>
+                <div class="cyber-card p-6 text-center border-cyan">
+                    <div class="text-5xl font-extrabold text-white text-glow mb-2">12<span class="text-cyan">M+</span></div>
+                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">全球活躍訓練家</div>
+                </div>
+                <div class="cyber-card p-6 text-center">
+                    <div class="text-5xl font-extrabold text-white text-glow mb-2">24<span class="text-cyan">/7</span></div>
+                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">全天候伺服器連線</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="community" class="bg-dark pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="text-2xl font-bold text-white tracking-widest text-glow mb-4 inline-block">
+                        POKEMASTER<span class="text-cyan">.</span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-md">
+                        透過最先進的 Cyber-Dex 技術，我們致力於為全球寶可夢訓練家提供最精準的數據分析與社群連結服務。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">系統資源</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-cyan text-sm transition-colors">API 開發者文件</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan text-sm transition-colors">系統狀態</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan text-sm transition-colors">支援中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">法規政策</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-cyan text-sm transition-colors">服務條款</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan text-sm transition-colors">隱私權政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan text-sm transition-colors">Cookie 政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
+                    &copy; 2026 Pokemaster Cyber-Dex Systems. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-cyan transition-colors">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-cyan transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
